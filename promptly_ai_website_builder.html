@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111827"><title>Promptly AI — Website Generator</title>
+<script src="https://js.puter.com/v2/"></script>
+<style>
+:root{--bg:#0b1020;--panel:#111a2d;--panel2:#172238;--line:#27334c;--text:#eef2ff;--muted:#9aa8c2;--accent:#8b7cff;--accent2:#b4aaff;--green:#6ee7b7}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#1a2450 0,transparent 42%),var(--bg);color:var(--text);font:15px/1.5 Inter,system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}button,textarea,select,input{font:inherit}button{cursor:pointer}.app{max-width:1320px;margin:auto;padding:24px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:26px}.brand{display:flex;gap:11px;align-items:center;font-weight:850;font-size:20px;letter-spacing:-.5px}.brand-icon{width:40px;height:40px;display:grid;place-items:center;background:linear-gradient(135deg,#a89cff,#6656ee);border-radius:13px;color:white;font-size:21px;box-shadow:0 8px 25px #7462ff44}.pill{border:1px solid var(--line);border-radius:999px;padding:8px 12px;color:var(--muted);font-size:12px;display:flex;align-items:center;gap:8px}.dot{width:7px;height:7px;border-radius:50%;background:var(--green)}.hero{text-align:center;padding:24px 10px 30px}.badge{display:inline-flex;align-items:center;gap:7px;border:1px solid #3b356f;background:#1c1a3b;color:#c6beff;border-radius:999px;padding:7px 12px;font-size:12px;font-weight:750}.hero h1{font-size:clamp(32px,5vw,54px);line-height:1.08;letter-spacing:-2px;margin:18px 0 13px}.gradient{background:linear-gradient(90deg,#c6beff,#8b7cff,#7dd3fc);color:transparent;background-clip:text}.hero p{color:var(--muted);max-width:620px;margin:auto;font-size:15px}.workspace{display:grid;grid-template-columns:minmax(320px,430px) minmax(0,1fr);gap:18px;align-items:stretch}.card{border:1px solid var(--line);background:linear-gradient(180deg,#131d31,#101829);border-radius:20px;overflow:hidden;box-shadow:0 22px 60px #0002}.card-head{padding:19px 21px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px}.card-head h2{font-size:15px;margin:0}.small{font-size:11px;color:var(--muted)}.form{padding:20px;display:flex;flex-direction:column;gap:15px}.label{font-size:12px;font-weight:750;color:#d6def2;display:block;margin-bottom:7px}.textarea,.select,.input{width:100%;background:#0c1425;border:1px solid #2b3854;color:var(--text);border-radius:12px;padding:12px 13px;outline:none}.textarea{min-height:180px;resize:vertical;line-height:1.6}.textarea:focus,.select:focus,.input:focus{border-color:#8b7cff;box-shadow:0 0 0 3px #8b7cff20}.textarea::placeholder,.input::placeholder{color:#65738e}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.btn{border:1px solid var(--line);border-radius:11px;padding:11px 14px;color:var(--text);background:#19243a;font-weight:750;transition:.15s}.btn:hover{filter:brightness(1.15);transform:translateY(-1px)}.btn-primary{border:0;background:linear-gradient(120deg,#8b7cff,#6b5be7);box-shadow:0 8px 24px #7766ff2a}.btn:disabled{opacity:.55;cursor:wait;transform:none}.generate{width:100%;padding:14px}.hint{font-size:11px;color:var(--muted);margin-top:-5px}.templates{display:flex;flex-wrap:wrap;gap:7px}.chip{font-size:11px;padding:7px 10px;background:#151f34;color:#b9c6e0;border:1px solid #2b3854;border-radius:999px}.chip:hover{border-color:#8b7cff;color:#d9d3ff}.preview-top{display:flex;align-items:center;gap:6px}.window-dot{width:7px;height:7px;background:#43516d;border-radius:50%}.preview-tools{display:flex;gap:7px;align-items:center}.btn-mini{font-size:11px;padding:7px 9px;border-radius:8px}.preview-shell{background:#e8eaf1;padding:12px;min-height:570px;height:calc(100% - 61px)}.preview-frame{display:block;width:100%;height:100%;min-height:545px;border:0;border-radius:8px;background:white}.placeholder{min-height:545px;height:100%;display:flex;align-items:center;justify-content:center;text-align:center;color:#65718a;background:linear-gradient(145deg,#f7f8fc,#eceef7);border-radius:8px;padding:25px}.placeholder-icon{font-size:42px;margin-bottom:14px}.placeholder strong{display:block;color:#263149;font-size:17px;margin-bottom:7px}.placeholder p{font-size:12px;max-width:290px;margin:auto}.status{min-height:20px;color:var(--muted);font-size:12px;padding:0 20px 16px}.status.error{color:#fca5a5}.status.good{color:var(--green)}.bottom{color:#74819b;text-align:center;font-size:11px;padding:24px 5px 6px}.modalnote{color:var(--muted);font-size:11px}.hidden{display:none!important}
+@media(max-width:850px){.workspace{grid-template-columns:1fr}.preview-shell{min-height:480px}.preview-frame,.placeholder{min-height:455px}.hero{padding-top:10px}.hero h1{letter-spacing:-1.3px}.app{padding:16px}}
+@media(max-width:460px){.top{align-items:flex-start}.pill{max-width:155px;font-size:10px}.row{grid-template-columns:1fr}.textarea{min-height:150px}.card-head{padding:15px}.form{padding:15px}.preview-shell{padding:7px;min-height:400px}.preview-frame,.placeholder{min-height:380px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+  <div class="brand"><div class="brand-icon">✦</div><span>Promptly <span style="color:#a99dff">AI</span></span></div>
+  <div class="pill"><span class="dot"></span><span id="connection">Puter.js ready to connect</span></div>
+</header>
+<section class="hero">
+  <div class="badge">✧ AI-POWERED WEBSITE GENERATOR</div>
+  <h1>Ideas in. Websites <span class="gradient">out.</span></h1>
+  <p>Describe the website you imagine. Let AI create the code, then preview it right here and download your HTML.</p>
+</section>
+<main class="workspace">
+<section class="card">
+  <div class="card-head"><h2>✎ Describe your website</h2><span class="small">STEP 01 / PROMPT</span></div>
+  <form class="form" id="builderForm">
+    <div><label class="label" for="prompt">What should the AI build?</label><textarea class="textarea" id="prompt" maxlength="5000" required placeholder="Example: Create a colorful gaming website with a hero section, 12 game cards, search, category filters, and a mobile-friendly layout."></textarea></div>
+    <div><label class="label">Try a starter idea</label><div class="templates">
+      <button type="button" class="chip" data-prompt="Create a modern gaming website with a neon dark theme, game cards, search bar, category filters, and responsive layout.">🎮 Gaming</button>
+      <button type="button" class="chip" data-prompt="Create a stylish online portfolio for a creative designer, with projects, about section, skills, and contact form.">🎨 Portfolio</button>
+      <button type="button" class="chip" data-prompt="Create a beautiful restaurant website with menu cards, opening hours, a hero image area, and table booking form.">🍜 Restaurant</button>
+      <button type="button" class="chip" data-prompt="Create a clean online store landing page with product cards, search, category filters, and a shopping cart demo.">🛍️ Store</button>
+      <button type="button" class="chip" data-prompt="Create a student study planner with tasks, subject cards, progress tracking, and a weekly schedule.">📚 Study planner</button>
+    </div></div>
+    <div class="row"><div><label class="label" for="style">Visual style</label><select class="select" id="style"><option>Modern and polished</option><option>Minimal and clean</option><option>Colorful and playful</option><option>Dark neon</option><option>Elegant and premium</option></select></div><div><label class="label" for="model">AI model</label><select class="select" id="model"><option value="gpt-5.4-nano">Fast (GPT Nano)</option><option value="claude-sonnet-4-5">Claude Sonnet (if available)</option><option value="gemini-2.5-flash">Gemini Flash (if available)</option></select></div></div>
+    <div><label class="label" for="extra">Extra instructions <span class="small">(optional)</span></label><input class="input" id="extra" maxlength="500" placeholder="e.g. Use purple and blue, add animations"></div>
+    <button class="btn btn-primary generate" id="generateBtn" type="submit">✦ Generate website</button>
+    <div class="hint">AI access may ask you to sign in to Puter. AI usage is subject to Puter's current account terms and limits.</div>
+  </form>
+  <div class="status" id="status" role="status" aria-live="polite"></div>
+</section>
+<section class="card">
+  <div class="card-head"><h2>▣ Live preview</h2><div class="preview-tools"><span class="small">STEP 02 / PREVIEW</span><button class="btn btn-mini" id="refreshBtn" type="button">↻ Refresh</button></div></div>
+  <div class="preview-shell" id="previewShell"><div class="placeholder" id="placeholder"><div><div class="placeholder-icon">✧</div><strong>Your website will appear here</strong><p>Write a prompt or choose a starter idea, then click Generate website.</p></div></div><iframe class="preview-frame hidden" id="preview" title="Generated website preview" sandbox="allow-scripts allow-forms allow-modals"></iframe></div>
+  <div class="card-head" style="border-top:1px solid var(--line);border-bottom:0"><div><h2>↓ Export your website</h2><div class="small">Download the generated page as a standalone HTML file.</div></div><button class="btn btn-primary" id="downloadBtn" type="button" disabled>Download HTML</button></div>
+</section>
+</main>
+<div class="bottom">Built with Puter.js · AI-generated code runs in a sandboxed preview · Promptly AI</div>
+</div>
+<script>
+(() => {
+const $=id=>document.getElementById(id);
+let generatedHTML='';
+function setStatus(message,kind=''){const el=$('status');el.textContent=message;el.className='status '+kind;}
+function extractText(response){
+  if(typeof response==='string')return response;
+  if(response?.message?.content){
+    const c=response.message.content;
+    if(typeof c==='string')return c;
+    if(Array.isArray(c))return c.map(x=>x.text||'').join('\\n');
+  }
+  if(response?.text)return response.text;
+  return String(response??'');
+}
+function cleanHTML(text){
+  let s=text.trim().replace(/^```(?:html)?\\s*/i,'').replace(/\\s*```$/,'');
+  const start=s.toLowerCase().indexOf('<!doctype html');
+  const alt=s.toLowerCase().indexOf('<html');
+  const pos=start>=0?start:alt;
+  if(pos>0)s=s.slice(pos);
+  return s;
+}
+document.querySelectorAll('[data-prompt]').forEach(btn=>btn.addEventListener('click',()=>{$('prompt').value=btn.dataset.prompt;$('prompt').focus();}));
+$('builderForm').addEventListener('submit',async e=>{
+ e.preventDefault();
+ const prompt=$('prompt').value.trim();if(!prompt)return;
+ if(typeof puter==='undefined'){setStatus('Puter.js did not load. Check your internet connection and refresh the page.','error');return;}
+ const btn=$('generateBtn');btn.disabled=true;btn.textContent='✧ Building your website…';setStatus('Connecting to Puter AI and generating your HTML. This can take a little while.');
+ $('connection').textContent='Generating with Puter AI…';
+ const fullPrompt=`You are an expert frontend web developer. Generate a complete, polished, responsive website from the user request. Visual style: ${$('style').value}. Extra instructions: ${$('extra').value.trim()||'None'}. User request: ${prompt}
+Requirements:
+- Return ONLY one complete standalone HTML document, starting with <!DOCTYPE html>. No markdown fences, no explanations.
+- Put all CSS in a <style> tag and JavaScript in a <script> tag. Do not require build tools, npm, or API keys.
+- Make the site visually polished, accessible, responsive on phones and desktops, and ensure all buttons and interactive controls work.
+- Use sensible placeholder visuals made with CSS/gradients or remote image URLs where suitable. Do not add Puter authentication or cloud saving unless the user explicitly requested it.
+- The generated HTML will be shown inside a sandboxed iframe.`;
+ try{
+   const response=await puter.ai.chat(fullPrompt,{model:$('model').value});
+   const result=cleanHTML(extractText(response));
+   if(!result.toLowerCase().includes('<html')||!result.toLowerCase().includes('</html>'))throw new Error('The AI response did not contain a complete HTML page. Try generating again.');
+   generatedHTML=result;
+   const blob=new Blob([generatedHTML],{type:'text/html'});
+   const url=URL.createObjectURL(blob);
+   $('preview').src=url;$('preview').classList.remove('hidden');$('placeholder').classList.add('hidden');
+   $('downloadBtn').disabled=false;
+   $('connection').textContent='Puter.js connected';
+   setStatus('Website generated successfully. Preview it on the right or download the HTML file.','good');
+ }catch(err){
+   setStatus('Could not generate the website: '+(err?.message||'Unknown error')+'. Try again or choose a different model.','error');
+   $('connection').textContent='Ready to retry';
+ }finally{btn.disabled=false;btn.textContent='✦ Generate website';}
+});
+$('refreshBtn').addEventListener('click',()=>{if(generatedHTML){const old=$('preview').src;const blob=new Blob([generatedHTML],{type:'text/html'});$('preview').src=URL.createObjectURL(blob);setStatus('Preview refreshed.','good');}else setStatus('Generate a website first.');});
+$('downloadBtn').addEventListener('click',()=>{
+ if(!generatedHTML)return;
+ const blob=new Blob([generatedHTML],{type:'text/html;charset=utf-8'});const url=URL.createObjectURL(blob);
+ const a=document.createElement('a');a.href=url;a.download='my-ai-website.html';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);
+ setStatus('Download started: my-ai-website.html','good');
+});
+})();
+</script>
+</body>
+</html>
